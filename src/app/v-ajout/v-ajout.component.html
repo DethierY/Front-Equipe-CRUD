@@ -1,0 +1,46 @@
+<!-- titre dynamique: selon si on est en mode édition ou création -->
+<mat-card-title>
+    {{ editing? 'Edition de véhicule' : 'Création de véhicule'}}</mat-card-title>
+  <hr>
+  <mat-card-content>
+    <!-- formulaire -->
+    <form #postForm="ngForm" (ngSubmit) = "onSubmit()" class = "example-form">
+      <mat-form-field>
+        <!-- liste déroulante des types de véhicules -->
+        <mat-select name = "type" placeholder = "Type de véhicule"
+                    [(ngModel)]="vehicule.type" required>
+          <mat-option *ngFor="let type of listTypeVehicule" [value]="type.value">
+            {{ type.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="vehicule.marque"
+          placeholder = "Marque du véhicule"
+          name = "marque" type = "text">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="vehicule.modele"
+          placeholder = "Modèle du véhicule"
+          name = "modele" type = "text">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="vehicule.immatriculation"
+          placeholder = "Immatriculation du véhicule"
+          name = "immatriculation" type = "text">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="vehicule.couleur"
+          placeholder = "Couleur du véhicule"
+          name = "couleur" type = "text">
+      </mat-form-field>
+
+      <!-- bouton de validation avec intitulé dynamique -->
+      <button mat-raised-button type = "submit" mat-button>{{ editing? 'Mettre à jour' : 'Créer'}}</button>
+    </form>
+  </mat-card-content>
+

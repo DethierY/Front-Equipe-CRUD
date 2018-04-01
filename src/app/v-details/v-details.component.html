@@ -1,0 +1,19 @@
+<div >
+  <mat-card-title>
+      Détails du véhicule</mat-card-title>
+  <hr>
+  <!-- affichage des données du véhicule -->
+  <mat-card-content>
+    <p>Type: {{vehicule.type}}: </p>
+    <p>Marque: {{vehicule.marque}}</p>
+    <p>Modele: {{vehicule.modele}}</p>
+    <p>couleur: {{vehicule.couleur}}</p>
+    <p>immatriculation: {{vehicule.immatriculation}}</p>
+    <div>
+      <!-- bouton daffichage du formulaire d'édition du véhicule -->
+      <button mat-icon-button href="" routerLink="../../v-edit/{{vehicule.id_vehicule}}">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+<div>
