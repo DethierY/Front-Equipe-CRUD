@@ -26,6 +26,7 @@
     dans l'invite de commande: **git clone https://github.com/DethierY/Front-Equipe-CRUD.git**
   * Ouvrir une invite de commande dans le dossier **Front-Equipe-CRUD** chargé:  
     commande: **npm install**
+    commande: **npm install @angular/flex-layout –save**
     
   ### Pour le back:
   
