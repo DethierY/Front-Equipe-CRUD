@@ -11,7 +11,7 @@
     <p class="texte" fxHide.xs>Ajouter un véhicule</p>
     <mat-icon class="icon" aria-label="Icon plus pour ajouter un véhicule" >add_circle</mat-icon>
   </button>
-  <!-- bouton d'affichage du formaulaire de filtrage de la liste de véhicule -->
+  <!-- bouton d'affichage du formulaire de filtrage de la liste de véhicule -->
   <button class="bouton"  (click)="afficherRechercheComponent()" 
           [ngStyle.md]="{'width.%': 30, 'height.em': 5, 'margin-left.%': 1, 'margin.%': 1}"
           [ngStyle.sm]="{'width.%': 80, 'height.em': 4, 'margin.%': 1, 'border-radius': 0}" 
@@ -34,7 +34,7 @@
     <!-- liste des véhicules -->
     <mat-card-content>
       <mat-list> 
-        <mat-list-item  *ngFor="let v of listVehicule"  (click)="afficherDetailvehicule(v)" class="itemDiv">
+        <mat-list-item  *ngFor="let v of listVehicule"  (click)="afficherDetailVehicule(v)" class="itemDiv">
           <!-- chaque ligne de la liste est un bouton qui renvoie sur l'affichage du véhicule de la ligne -->
           <button [ngStyle.md]="{'width.em': 50, 'height.em': 5}"
                   [ngStyle.sm]="{'width.em': 45, 'height.em': 5}" 

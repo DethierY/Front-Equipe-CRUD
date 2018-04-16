@@ -24,7 +24,7 @@ export class VehiculesComponent implements OnInit {
   }
 
   // renvoie sur l'afichage du véhicule sélectionner dans la liste
-  afficherDetailvehicule(vehicule) {
+  afficherDetailVehicule(vehicule) {
     this.router.navigate(['v-details', vehicule.id_vehicule], {relativeTo: this.route});
   }
 
@@ -38,7 +38,7 @@ export class VehiculesComponent implements OnInit {
     this.router.navigate(['vrecherche-avancee'], {relativeTo: this.route});
   }
 
-  // méthode utlisée pour remettre à jour la liste depuis le formulaire de création de véhicule
+  // méthode utilisée pour remettre à jour la liste depuis le formulaire de création de véhicule
   mettreListeAJour() {
     this.vehiculeService.getListVehicule().subscribe(listVehicule => this.listVehicule = listVehicule);
   }

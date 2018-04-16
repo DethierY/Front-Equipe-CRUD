@@ -51,16 +51,21 @@ export class VAjoutComponent implements OnInit {
   onSubmit() {
     // si on est en édition, édite le véhicule avec les données du formulaire
     // puis renvoie vers la fiche du véhicule avec les données modifiées
-    // si on est en création, crée un véhicule avec les données du formulaire
-    // puis remet l'afichage de la liste à jour
+    // si on est en création, crée un véhicule avec les données du formulaire,
+    // puis renvoie vers sa fiche détaillée.
+    // Dans les deux cas, remet l'affichage de la liste à jour
     if (this.editing) {
-      this.vehiculeService.updateVehicule(this.vehicule).subscribe();
-        this.router.navigate(['../../v-details', this.vehicule.id_vehicule], {relativeTo: this.route});
+      this.vehiculeService.updateVehicule(this.vehicule).subscribe(
+        newVehicule => {
+          this.vehiculesComponent.mettreListeAJour();
+        }
+      );
+      this.router.navigate(['../../v-details', this.vehicule.id_vehicule], {relativeTo: this.route});
     } else {
       this.vehiculeService.createVehicule(this.vehicule).subscribe(
         newVehicule => {
-          this.vehiculesComponent.mettreListeAJour();
           this.router.navigate(['../v-details', newVehicule.id_vehicule], {relativeTo: this.route});
+          this.vehiculesComponent.mettreListeAJour();
         }
       );
     }

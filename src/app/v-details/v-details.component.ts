@@ -20,6 +20,7 @@ export class VDetailsComponent implements OnInit {
 
   ngOnInit() {
     // affichage des données d'un véhicule à l'initialisation du composant
+    this.vehicule = null;
     this.id = +this.route.snapshot.paramMap.get('id');
     this.vehiculeService.getVehicule(this.id).subscribe(
       vehicule => this.vehicule = vehicule

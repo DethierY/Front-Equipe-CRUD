@@ -15,6 +15,7 @@ import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { BodyComponent } from './body/body.component';
 import { PopupConnexionComponent } from './popup-connexion/popup-connexion.component';
 import { VDetailsComponent } from './v-details/v-details.component';
 import { HeaderComponent } from './header/header.component';
@@ -26,8 +27,6 @@ import { SuspectRechercheAvanceeComponent } from './suspect-recherche-avancee/su
 import { VehiculesComponent } from './vehicules/vehicules.component';
 import { VAjoutComponent } from './v-ajout/v-ajout.component';
 import { VrechercheAvanceeComponent } from './vrecherche-avancee/vrecherche-avancee.component';
-import { BodyComponent } from './body/body.component';
-
 
 @NgModule({
   declarations: [
